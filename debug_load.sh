@@ -1,13 +1,6 @@
 #!/bin/bash
 # Purpose: Debug server load with enhanced metrics
 
-# Force interactive mode when piped from curl
-if [[ -t 0 ]]; then
-    : # terminal is interactive, continue
-else
-    exec < /dev/tty
-fi
-
 set -e
 
 # Colors
