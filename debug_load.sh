@@ -161,9 +161,3 @@ else
 fi
 
 success "Load debug completed."
-
-# Only delete if the script is a regular file (not a pipe or virtual descriptor)
-if [ -f "$0" ] && [[ "$0" != /dev/fd/* ]]; then
-    echo "Cleaning up script: $0"
-    rm -- "$0"
-fi
