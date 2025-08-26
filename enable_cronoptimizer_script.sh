@@ -90,7 +90,8 @@ for ops in "${opID[@]}"; do
     echo "Application:      $(jq -r '.operation | .app_id' operation.json)"
     echo "Status:   $(jq -r '.operation | .status' operation.json)"
     # Writing server and app IDs to the file named completed.txt
-    echo "$(jq -r '.operation | .server_id' operation.json): $(jq -r '.operation | .app_id' operation.json)" >> completed.txt
+    echo "$(jq -r '.operation | .server_id' operation.json): $(jq -r '.operation | .app_id' operation.json)" >>
+completed.txt
     mv operation.json /tmp/operation_$ops.json
     _note "Putting script to sleep to respect API rate limit."
     sleep 5
